@@ -42,7 +42,7 @@ st.title("Confidence Interval Visualization App")
 # User inputs
 sample_sizes = st.text_input("Enter up to 4 sample sizes separated by commas (e.g., 500,50,10)", "500,50,10")
 sample_sizes = list(map(int, sample_sizes.split(",")))[:4]  # Limit to 4 sample sizes
-num_samples = st.number_input("Enter the number of samples to be taken", min_value=1, max_value=100, value=10)
+num_samples = st.number_input("Enter the number of times sampling to be done", min_value=1, max_value=100, value=10)
 confidence_level = st.slider("Select confidence level", 0.80, 0.99, 0.95, step=0.01)
 z_critical = stats.norm.ppf(1 - (1 - confidence_level) / 2)
 
